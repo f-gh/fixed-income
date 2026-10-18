@@ -31,26 +31,29 @@ df = pd.read_xml(
 )
 
 # Clean up the dataframe and save it as csv
-df = df.drop(columns=["BC_30YEARDISPLAY"], errors="ignore")
+def cleanup_yields(df: pd.DataFrame) -> pd.DateFrame:
+    df = df.drop(columns=["Id", "BC_30YEARDISPLAY"], errors="ignore")
 
-df["NEW_DATE"] = pd.to_datetime(df["NEW_DATE"])
+    df["NEW_DATE"] = pd.to_datetime(df["NEW_DATE"])
 
-yield_columns = [
-    column for column in df.columns
-    if column.startswith("BC_")
-]
+    yield_columns = [
+        column for column in df.columns
+        if column.startswith("BC_")
+    ]
 
-df[yield_columns] = (df[yield_columns] / 100).round(4)
+    df[yield_columns] = (df[yield_columns] / 100).round(4)
 
-df = df.rename(columns={
-    "NEW_DATE": "date",
-    "Id": "id",
-})
+    df = df.rename(columns={
+        "NEW_DATE": "date"
+    })
 
-df = df.rename(
-    columns=lambda col: col.removeprefix("BC_")
-)
+    df = df.rename(
+        columns=lambda col: col.removeprefix("BC_")
+    )
 
+    return df
+
+df = cleanup_yields(df)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = PROJECT_ROOT / "data" / "raw"
