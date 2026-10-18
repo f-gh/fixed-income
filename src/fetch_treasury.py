@@ -4,6 +4,7 @@ from io import StringIO
 from datetime import datetime
 from pathlib import Path
 
+# Request data for the current month in YYYYMM format
 MONTH = datetime.now().strftime("%Y%m")
 
 URL = "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xmlview"
@@ -16,6 +17,7 @@ params = {
 response = requests.get(URL, params=params, timeout=30)
 response.raise_for_status()
 
+# Parse the XML response into a dataframe
 namespaces = {
     "m": "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata",
     "d": "http://schemas.microsoft.com/ado/2007/08/dataservices",
@@ -28,6 +30,7 @@ df = pd.read_xml(
     parser="etree",
 )
 
+# Clean up the dataframe and save it as csv
 df = df.drop(columns=["BC_30YEARDISPLAY"], errors="ignore")
 
 df["NEW_DATE"] = pd.to_datetime(df["NEW_DATE"])
