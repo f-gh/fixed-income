@@ -40,7 +40,7 @@ yield_columns = [
     if column.startswith("BC_")
 ]
 
-df[yield_columns] = df[yield_columns] / 100
+df[yield_columns] = (df[yield_columns] / 100).round(4)
 
 df = df.rename(columns={
     "NEW_DATE": "date",
