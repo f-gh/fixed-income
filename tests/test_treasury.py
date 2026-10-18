@@ -1,4 +1,4 @@
-from fetch_treasury import cleanup_yields
+from fixed_income.fetch_treasury import cleanup_yields
 import pandas as pd
 import pytest 
 
