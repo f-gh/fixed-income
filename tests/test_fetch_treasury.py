@@ -24,5 +24,3 @@ def test_yield_is_stored_as_decimal():
 def test_30YEARDISPLAY_is_dropped():
     assert "30YEARDISPLAY" not in df.columns
 
-
-

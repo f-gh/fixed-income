@@ -1,6 +1,6 @@
 # bootstrap treasury's constant maturity yield curve
 
-# initialize a new dataframe for bootstraping
+# initialize a new dataframe for bootstrapping
 
 def create_bootstrap_df(df: pd.DataFrame) -> pd.DataFrame:  
     df_bootstrap = df.rename(columns={
@@ -35,4 +35,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-    
