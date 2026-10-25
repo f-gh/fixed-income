@@ -1,4 +1,6 @@
 from fixed_income.bootstrap_cmt import create_bootstrap_df
+from fixed_income.bootstrap_cmt import interpolate_cmt
+
 import pandas as pd
 import numpy as np
 import pytest
@@ -19,3 +21,13 @@ df = pd.DataFrame({
 def test_dataframe_length():
     df_test = create_bootstrap_df(df)
     assert len(df_test.columns) == 61
+
+def test_interpolate_cmt():
+    df_test = create_bootstrap_df(df)
+    df_test = interpolate_cmt(df_test)
+    assert df_test['2.5'].iloc[0] == pytest.approx(4.205)
+    assert df_test['29.5'].iloc[0] == pytest.approx(5.89)
+    assert df_test['30.0'].iloc[0] == pytest.approx(5.9)
+
+
+
