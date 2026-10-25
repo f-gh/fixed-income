@@ -1,0 +1,21 @@
+from fixed_income.bootstrap_cmt import create_bootstrap_df
+import pandas as pd
+import numpy as np
+import pytest
+
+df = pd.DataFrame({
+    "date": ["2026-10-01"],
+    "6MONTH": [3.04],
+    "1YEAR": [3.50],
+    "2YEAR": [3.91],
+    "3YEAR": [4.50],
+    "5YEAR": [4.80],
+    "7YEAR": [4.91],
+    "10YEAR": [5.50],
+    "20YEAR": [5.70],
+    "30YEAR": [5.90],
+})
+
+def test_dataframe_length():
+    df_test = create_bootstrap_df(df)
+    assert len(df_test.columns) == 61

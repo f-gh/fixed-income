@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 # bootstrap treasury's constant maturity yield curve
 
 # initialize a new dataframe for bootstrapping
