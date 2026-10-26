@@ -1,10 +1,9 @@
 import pandas as pd
 import numpy as np
 
-# bootstrap treasury's constant maturity yield curve
+# Linear interpolation of the yield curve
 
 # initialize a new dataframe for bootstrapping
-
 def create_bootstrap_df(df: pd.DataFrame) -> pd.DataFrame:  
     df_bootstrap = df.rename(columns={
         "6MONTH": "0.5"

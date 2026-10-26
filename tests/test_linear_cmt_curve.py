@@ -1,5 +1,5 @@
-from fixed_income.bootstrap_cmt import create_bootstrap_df
-from fixed_income.bootstrap_cmt import interpolate_cmt
+from fixed_income.linear_cmt_curve import create_bootstrap_df
+from fixed_income.linear_cmt_curve import interpolate_cmt
 
 import pandas as pd
 import numpy as np
