@@ -1,4 +1,4 @@
-from fixed_income.linear_cmt_curve import create_bootstrap_df
+from fixed_income.linear_cmt_curve import create_interpolation_df
 from fixed_income.linear_cmt_curve import interpolate_cmt
 
 import pandas as pd
@@ -19,11 +19,11 @@ df = pd.DataFrame({
 })
 
 def test_dataframe_length():
-    df_test = create_bootstrap_df(df)
+    df_test = create_interpolation_df(df)
     assert len(df_test.columns) == 61
 
 def test_interpolate_cmt():
-    df_test = create_bootstrap_df(df)
+    df_test = create_interpolation_df(df)
     df_test = interpolate_cmt(df_test)
     assert df_test['2.5'].iloc[0] == pytest.approx(4.205)
     assert df_test['29.5'].iloc[0] == pytest.approx(5.89)

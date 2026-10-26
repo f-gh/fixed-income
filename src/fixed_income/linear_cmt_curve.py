@@ -3,8 +3,8 @@ import numpy as np
 
 # Linear interpolation of the yield curve
 
-# initialize a new dataframe for bootstrapping
-def create_bootstrap_df(df: pd.DataFrame) -> pd.DataFrame:  
+# initialize a new dataframe for interpolation
+def create_interpolation_df(df: pd.DataFrame) -> pd.DataFrame:  
     df_bootstrap = df.rename(columns={
         "6MONTH": "0.5"
     })
@@ -58,7 +58,7 @@ def interpolate_cmt(df_bootstrap: pd.DataFrame) -> pd.DataFrame:
 
 
 def main() -> None:
-    df_bootstrap = create_bootstrap_df(df)
+    df_bootstrap = create_interpolation_df(df)
 
 if __name__ == "__main__":
     main()
