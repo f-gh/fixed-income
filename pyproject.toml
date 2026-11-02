@@ -18,7 +18,30 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest",
+    "ruff",
+    "mypy",
 ]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes
+    "I",   # Import sorting
+]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.14"
+mypy_path = "src"
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
