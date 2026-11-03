@@ -1,4 +1,3 @@
-
 def construct_curve(df):
     r_1 = df.loc[df["maturity"] == 1, "par_yield"].iloc[0]
     r_2 = df.loc[df["maturity"] == 2, "par_yield"].iloc[0]
@@ -14,6 +13,5 @@ def construct_curve(df):
 def discount_factor(rate, maturity):
     if maturity < 0:
         raise ValueError("Maturity cannot be negative")
-        
-    return 1/(1 + rate)**maturity
 
+    return 1 / (1 + rate) ** maturity

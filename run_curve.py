@@ -1,5 +1,6 @@
 import pandas as pd
-from fixed_income.curve import construct_curve 
+
+from fixed_income.curve import construct_curve
 
 df = pd.read_csv("data/synthetic/par_yields.csv")
 
