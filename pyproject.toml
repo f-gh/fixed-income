@@ -20,6 +20,8 @@ dev = [
     "pytest",
     "ruff",
     "mypy",
+    "pandas-stubs",
+    "scipy-stubs",
 ]
 
 [tool.setuptools.packages.find]
