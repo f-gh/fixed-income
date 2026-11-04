@@ -22,6 +22,7 @@ dev = [
     "mypy",
     "pandas-stubs",
     "scipy-stubs",
+    "pre-commit",
 ]
 
 [tool.setuptools.packages.find]
