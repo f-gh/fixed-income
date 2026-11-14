@@ -87,7 +87,11 @@ def fit_ns(
     lmbda: float = 0.2,
 ):
 
-    ns_initial_guess = [rates[-1], 0.0, 0.0]  # b_0 is close to longest obsereved yield
+    ns_initial_guess = [
+        rates[-1],
+        0.0,
+        0.0,
+    ]  # b_0 is close to longest obsereved yield
 
     return least_squares(
         ns_residuals, ns_initial_guess, args=(maturities, rates, lmbda)

@@ -24,6 +24,7 @@ dev = [
     "pandas-stubs",
     "scipy-stubs",
     "pre-commit",
+    "ipykernel",
 ]
 
 [tool.setuptools.packages.find]

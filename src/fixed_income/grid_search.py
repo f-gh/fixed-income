@@ -4,7 +4,7 @@ import pandas as pd
 from fixed_income.nss_curve import fit_ns, fit_nss
 
 
-# This helper function selects the best lambda or lambda and mu and their betas based on 4 error criteria
+# This helper function selects the best lambda or lambda and mu and their betas based on 3 error criteria
 def select_best_fits(search_result):
     search_result = {
         key: value for key, value in search_result.items() if value["success"]
@@ -53,7 +53,7 @@ def select_best_fits(search_result):
     return pd.DataFrame(rows).set_index("Criterion").round(4)
 
 
-# Line search for finding best lambda for ns model based on 4 criteria:
+# Line search for finding best lambda for ns model based on 3 criteria:
 # RMSE: Root Mean Square Error
 # MAE: Mean Absolute Error
 # Maximum residual
@@ -86,7 +86,7 @@ def ns_linesearch(
     return select_best_fits(search_result)
 
 
-# Grid search for finding best lambda and mu for nss model based on 4 criteria:
+# Grid search for finding best lambda and mu for nss model based on 3 criteria:
 # RMSE: Root Mean Square Error
 # MAE: Mean Absolute Error
 # Maximum residual
