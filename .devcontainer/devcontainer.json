@@ -3,6 +3,10 @@
     "name": "Fixed Income Development",
     "image": "mcr.microsoft.com/devcontainers/python:3.14-bookworm",
 
+    "features": {
+        "ghcr.io/devcontainers/features/git-lfs:1": {}
+    },
+    
     "postCreateCommand": "python -m venv .venv && .venv/bin/python -m pip install --upgrade pip && .venv/bin/python -m pip install -e '.[dev]'",
 
     "customizations": {
