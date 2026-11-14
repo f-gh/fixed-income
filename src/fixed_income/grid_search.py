@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from numpy.typing import NDArray
 
 from fixed_income.nss_curve import fit_ns, fit_nss
 
