@@ -11,3 +11,5 @@ Fixed income analytics and interest rate modeling
  * Linear interpolation of par yields,
  * Fit Nelson-Siegel (NS) and Nelson-Siegel-Svensson (NSS) curves,
  * Optimize parameters of NS and NSS models.
+
+Notebooks provide a demonstration of the package's functionalities.
