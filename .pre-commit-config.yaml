@@ -7,3 +7,9 @@ repos:
         entry: ruff format
         language: system
         types: [python]
+
+      - id: ruff-format-notebook
+        name: Ruff formatting (Jupyter notebooks)
+        entry: ruff format
+        language: system
+        types: [jupyter]
