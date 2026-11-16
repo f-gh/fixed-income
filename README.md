@@ -8,7 +8,6 @@ Fixed income analytics and interest rate modeling
 
 **Library functionalities:**
  * Download and clean US treasury par yields,
- * Linear interpolation of par yields,
  * Fit Nelson-Siegel (NS) and Nelson-Siegel-Svensson (NSS) curves,
  * Optimize parameters of NS and NSS models.
 
